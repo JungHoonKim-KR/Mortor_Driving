@@ -101,8 +101,8 @@ void oneByStep(long pulse_target) {
     }
   } 
   else{
-    mode0(0x001, 1, 0, pulse_target, MaxPPS);
-    delay((pulse_target * 1000) / MaxPPS);
+    mode0(0x001, 1, 0, pulse_target, PPS);
+    delay((pulse_target * 1000) / PPS);
   }
 
   Serial.println("OneByStep Finish");

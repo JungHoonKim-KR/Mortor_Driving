@@ -33,12 +33,7 @@ LabView와 아두이노를 이용해 스텝모터를 제어하는 프로젝트�
   - **속도 0 설정**: `PPS = 0`으로 설정하여 모터 정지.
   - **비상 정지(E-STOP)**: 일부 모터 드라이버는 비상 정지 메시지로 즉시 멈추는 기능을 제공.
 
-### 4. **CAN 버퍼 처리**
-- **CAN 버퍼 초기화**: 수신된 메시지를 모두 읽어서 버퍼를 비움.
-  - `while (CAN_MSGAVAIL == CAN.checkReceive())`로 버퍼에 남아 있는 메시지를 확인.
-  - `CAN.readMsgBuf()`를 사용해 수신된 메시지를 읽고 버퍼를 비움.
-
-### 5. **CAN 메시지를 통한 모터 제어 (mode0 함수 설명)**
+### 4. **CAN 메시지를 통한 모터 제어 (mode0 함수 설명)**
 ```cpp
 void mode0(uint16_t can_id, uint8_t ena, uint8_t dir, uint32_t pulse_target, uint16_t pps) {
   uint8_t data[8];
